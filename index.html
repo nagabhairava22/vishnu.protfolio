@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ammu!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        #birthdayWish {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #birthdayImage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .heart {
+            position: absolute;
+            color: #e74c3c;
+            font-size: 24px;
+            animation: floatHeart 1s infinite alternate;
+        }
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="birthdayWish">
+        <h1>Happy Birthday Ammu!</h1>
+        <p>Dear Ammu,</p>
+        <p>On this special day, I want to wish you a very happy birthday! 🎉</p>
+        <p>May your day be filled with joy, love, and all the wonderful things that life has to offer.</p>
+        <p>Thank you for being such an amazing part of my life. I cherish the moments we've shared and look forward to creating many more memories together.</p>
+        <p>Wishing you all the happiness in the world on your birthday!</p>
+        <img id="birthdayImage" src="link_to_a_special_image_for_her_birthday.jpg" alt="Birthday Image">
+        <div class="heart">&#10084;</div>
+        <p>Exact days and hours since your birth:</p>
+        <p id="daysAndHours"></p>
+    </div>
+
+    <script>
+        // Ammu's birthdate and time
+        const birthdate = new Date('1998-12-19T12:15:00');
+
+        // Current date
+        const currentDate = new Date();
+
+        // Calculate the difference in milliseconds
+        const timeDifference = currentDate - birthdate;
+
+        // Convert milliseconds to days and hours
+        const daysSinceBirth = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hoursSinceBirth = Math.floor(timeDifference / (1000 * 60 * 60));
+
+        // Display the result
+        document.getElementById('daysAndHours').innerText = `${daysSinceBirth} days and ${hoursSinceBirth % 24} hours`;
+
+        // Add a surprise element
+        document.addEventListener("DOMContentLoaded", function() {
+            const heart = document.querySelector(".heart");
+            setTimeout(() => {
+                heart.style.display = "none";
+            }, 5000); // Hide the heart after 5 seconds
+        });
+    </script>
+</body>
+</html>
